@@ -1,0 +1,35 @@
+marquee {
+  overflow: hidden;
+  width: 100%;
+  padding: 40px 0;
+}
+
+.track {
+  display: flex;
+  gap: 20px;
+  width: max-content;
+  animation: scroll 12s linear infinite;
+}
+
+.card {
+  width: 250px;
+  height: 150px;
+  background: white;
+  border-radius: 10px;
+  padding: 20px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  flex-shrink: 0;
+}
+
+.card h3 {
+  margin: 0 0 10px;
+}
+
+@keyframes scroll{
+    from{
+        transform: translateX(0);
+    }
+    to{
+        transform: translateX(-50%);
+    }
+}
