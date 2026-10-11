@@ -2340,6 +2340,21 @@ header {
    20. EXTRA SMALL PHONES
 ========================= */
 
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
 @media (max-width: 380px) {
     .bang {
         padding-inline: 10px;
@@ -2473,6 +2488,223 @@ header {
     }
 }
 
+/* =========================
+   22. RESPONSIVE HARDENING
+========================= */
+
+/* Keep every content block inside the viewport at intermediate widths. */
+html,
+body {
+    max-width: 100%;
+}
+
+main,
+footer,
+header,
+.bang {
+    min-width: 0;
+}
+
+.header-nav,
+.hero,
+.hero-media,
+.gradient-sect,
+.image-sect,
+.pic,
+.promo {
+    max-width: 100%;
+}
+
+.hero h1,
+.gradient-sect h2,
+.gradient-sect h5,
+.crab-text h2,
+.customer-sect > h2,
+.customer-sect > h3,
+.ai-apps > h2,
+.pic .picture h2,
+.icon-sect > h2,
+.create h1,
+.create h2 {
+    text-wrap: balance;
+}
+
+@media (max-width: 1024px) and (min-width: 761px) {
+    .header-nav {
+        width: calc(100% - 32px);
+    }
+
+    .img-header {
+        gap: 5px;
+    }
+
+    .img-header img {
+        max-width: 92px;
+    }
+
+    .header-list {
+        gap: 8px;
+    }
+
+    .header-list a {
+        font-size: 11px;
+    }
+
+    .header-button {
+        gap: 5px;
+    }
+
+    .header-button > a {
+        padding-inline: 9px;
+        font-size: 11px;
+    }
+
+    .hero-media {
+        gap: 16px;
+    }
+
+    .image-sect,
+    .pic {
+        gap: 32px;
+    }
+
+    .main1 {
+        width: min(100%, 960px);
+        gap: 16px;
+    }
+}
+
+@media (max-width: 760px) {
+    .header-nav {
+        width: calc(100% - 24px);
+    }
+
+    /* Two brand images compete with the actions on narrow screens. */
+    .img-header .log2 {
+        display: none;
+    }
+
+    .header-button .Loginb {
+        display: none;
+    }
+
+    .header-nav .header-list {
+        max-height: calc(100vh - 90px);
+        overflow-y: auto;
+        overscroll-behavior: contain;
+    }
+
+    .hero,
+    .hero-media,
+    .gradient-sect,
+    .pic {
+        width: calc(100% - 24px);
+    }
+
+    .hero {
+        padding-top: clamp(42px, 10vw, 72px);
+    }
+
+    .hero h1 {
+        font-size: clamp(30px, 8vw, 43px);
+    }
+
+    .hero-buttons,
+    .gradient-button {
+        width: 100%;
+    }
+
+    .hero-buttons .btn,
+    .gradient-button .press {
+        flex: 1 1 220px;
+    }
+
+    .image-sect,
+    .promo {
+        width: calc(100% - 24px);
+    }
+
+    .image-sect {
+        padding: clamp(18px, 4vw, 30px);
+    }
+
+    .crab img,
+    .pic .image img {
+        max-height: none;
+    }
+
+    .icon-sect {
+        padding-inline: 12px;
+    }
+
+    .main1 {
+        width: 100%;
+    }
+
+    .para-sect {
+        padding-inline: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .bang-left span a {
+        font-size: 10px;
+    }
+
+    .bang-right {
+        width: 100%;
+        gap: 6px 11px;
+    }
+
+    .bang-right a {
+        font-size: 10px;
+    }
+
+    .header-nav {
+        min-height: 64px;
+    }
+
+    .img-header img {
+        max-width: 105px;
+        max-height: 30px;
+    }
+
+    .header-button > a {
+        padding-inline: 10px;
+    }
+
+    .hero,
+    .hero-media,
+    .gradient-sect,
+    .pic,
+    .image-sect,
+    .promo {
+        width: calc(100% - 20px);
+    }
+
+    .hero-buttons .btn,
+    .gradient-button .press {
+        flex-basis: 100%;
+    }
+
+    .button-container {
+        margin-top: 24px;
+    }
+
+    .card {
+        width: min(82vw, 290px);
+    }
+
+    .para {
+        grid-template-columns: 1fr;
+        gap: 26px;
+    }
+
+    .iconic {
+        align-items: flex-start;
+    }
+}
+
 
 /* =========================
    21. REDUCED MOTION
@@ -2490,4 +2722,3 @@ header {
         transition-duration: 0.01ms !important;
     }
 }
-

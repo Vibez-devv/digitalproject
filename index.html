@@ -6,7 +6,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-```
 <meta name="description"
     content="Explore DigitalOcean cloud computing, AI infrastructure, developer tools, and scalable cloud solutions.">
 
@@ -21,7 +20,7 @@
     referrerpolicy="no-referrer">
 
 <link rel="stylesheet" href="./landing.css">
-```
+
 
 </head>
 
@@ -57,11 +56,11 @@
         <div class="img-header">
 
             <a href="./index.html" class="logo1" aria-label="DigitalOcean homepage">
-                <img src="../images/oceanlogo.png" alt="DigitalOcean logo">
+                <img src="./images/oceanlogo.png" alt="DigitalOcean logo" loading="eager" fetchpriority="high" decoding="async">
             </a>
 
             <a href="./index.html" class="log2" aria-label="DigitalOcean homepage">
-                <img src="../images/ocean.png.png" alt="DigitalOcean">
+                <img src="./images/ocean.png.png" alt="DigitalOcean" loading="eager" fetchpriority="high" decoding="async">
             </a>
 
         </div>
@@ -146,15 +145,22 @@
 
         <img
             src="./video/digital3-ezgif.com-video-to-gif-converter.gif"
-            alt="DigitalOcean cloud infrastructure animation">
+            alt="DigitalOcean cloud infrastructure animation"
+            loading="eager"
+            fetchpriority="high"
+            decoding="async">
 
         <img
             src="./video/gif3.gif"
-            alt="Cloud computing animation">
+            alt="Cloud computing animation"
+            loading="lazy"
+            decoding="async">
 
         <img
             src="./video/gif4.gif"
-            alt="AI infrastructure animation">
+            alt="AI infrastructure animation"
+            loading="lazy"
+            decoding="async">
 
     </section>
 
@@ -239,23 +245,23 @@
 
             <div class="quee-track">
 
-                <img src="./images/amor.png" alt="Amorphous Data logo">
-                <img src="./images/aqua.png" alt="Aqua logo">
-                <img src="./images/bright.png" alt="Bright logo">
-                <img src="./images/consume.png" alt="Consumable logo">
-                <img src="./images/fal.png" alt="fal logo">
-                <img src="./images/character.png" alt="Character logo">
-                <img src="./images/ser.png" alt="Servd logo">
+                <img src="./images/amor.png" alt="Amorphous Data logo" loading="lazy" decoding="async">
+                <img src="./images/aqua.png" alt="Aqua logo" loading="lazy" decoding="async">
+                <img src="./images/bright.png" alt="Bright logo" loading="lazy" decoding="async">
+                <img src="./images/consume.png" alt="Consumable logo" loading="lazy" decoding="async">
+                <img src="./images/fal.png" alt="fal logo" loading="lazy" decoding="async">
+                <img src="./images/character.png" alt="Character logo" loading="lazy" decoding="async">
+                <img src="./images/ser.png" alt="Servd logo" loading="lazy" decoding="async">
 
                 <!-- Repeated logos for a continuous scrolling effect -->
 
-                <img src="./images/amor.png" alt="" aria-hidden="true">
-                <img src="./images/aqua.png" alt="" aria-hidden="true">
-                <img src="./images/bright.png" alt="" aria-hidden="true">
-                <img src="./images/consume.png" alt="" aria-hidden="true">
-                <img src="./images/fal.png" alt="" aria-hidden="true">
-                <img src="./images/character.png" alt="" aria-hidden="true">
-                <img src="./images/ser.png" alt="" aria-hidden="true">
+                <img src="./images/amor.png" alt="" aria-hidden="true" loading="lazy" decoding="async">
+                <img src="./images/aqua.png" alt="" aria-hidden="true" loading="lazy" decoding="async">
+                <img src="./images/bright.png" alt="" aria-hidden="true" loading="lazy" decoding="async">
+                <img src="./images/consume.png" alt="" aria-hidden="true" loading="lazy" decoding="async">
+                <img src="./images/fal.png" alt="" aria-hidden="true" loading="lazy" decoding="async">
+                <img src="./images/character.png" alt="" aria-hidden="true" loading="lazy" decoding="async">
+                <img src="./images/ser.png" alt="" aria-hidden="true" loading="lazy" decoding="async">
 
             </div>
 
@@ -286,7 +292,9 @@
 
                 <img
                     src="./images/white man.png"
-                    alt="Gorkem Yurtseven">
+                    alt="Gorkem Yurtseven"
+                    loading="lazy"
+                    decoding="async">
 
                 <div class="overlay">
 
@@ -328,7 +336,9 @@
 
                 <img
                     src="./images/fat.png"
-                    alt="Matt Gray">
+                    alt="Matt Gray"
+                    loading="lazy"
+                    decoding="async">
 
                 <div class="overlay">
 
@@ -371,7 +381,9 @@
 
                 <img
                     src="./images/hand.png"
-                    alt="Amorphous Data representative">
+                    alt="Amorphous Data representative"
+                    loading="lazy"
+                    decoding="async">
 
                 <div class="overlay">
 
@@ -879,6 +891,22 @@
     </div>
 
 </footer>
+
+<script>
+    const navigation = document.querySelector(".header-nav");
+    const menuToggle = document.querySelector(".menu-toggle");
+
+    if (navigation && menuToggle) {
+        menuToggle.addEventListener("click", () => {
+            const isOpen = navigation.classList.toggle("menu-open");
+            menuToggle.setAttribute("aria-expanded", String(isOpen));
+            menuToggle.setAttribute(
+                "aria-label",
+                isOpen ? "Close navigation menu" : "Open navigation menu"
+            );
+        });
+    }
+</script>
 
 </body>
 
